@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="./Modal/CSS/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <title>Animais Fantásticos</title>
@@ -12,12 +12,13 @@
   </script>
 </head>
 <body>
+<div class="grid-container">
   <nav class="menu" data-menu="suave">
     <ul>
       <li><a href="#animais">Animais</a></li>
       <li><a href="#faq">Faq</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li><a href="#dev">Dev</a></li>
+      <li><a data-modal="abrir" href="login.html">Login</a></li>
     </ul>
   </nav>
   <section class="grid-section animais" data-anime="scroll" id="animais">
@@ -91,7 +92,7 @@
 
   <section class="grid-section contato" data-anime="scroll" id="contato">
     <h1 class="titulo">Contato</h1>
-    <div class="mapa">
+    <div class="mapa" data-tooltip aria-label="endereço próximo ao estacionamento">
       <img src="img/mapa.jpg" alt="">
     </div>
     <ul class="dados">
@@ -105,7 +106,22 @@
   <footer class="copy">
     <p>Todos os direitos reservados</p>
   </footer>
+</div>
+
+  <section class="modal-container" data-modal="container">
+    <div class="modal">
+      <button data-modal="fechar" class="fechar">X</button>
+      <form action="">
+      <label for="email">Email</label>
+      <input type ="text" for="email" id="email">
+      <label for="senha">Senha</label>
+      <input type ="text" for="senha" id="senha">
+      <button type="submit">Entrar</button>
+    </form>
+    </div>
+  </section>
 
   <script type = "module" src="js/script.js"></script>
+
 </body>
 </html>
